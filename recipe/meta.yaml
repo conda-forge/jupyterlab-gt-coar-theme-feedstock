@@ -1,5 +1,5 @@
 {% set name = "jupyterlab-gt-coar-theme" %}
-{% set version = "0.2.0" %}
+{% set version = "0.2.2" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8b8254384f3efcaf1dffec6c4a9bea011e36edcd2ad8626b1b25bfe051b0e7e0
+  sha256: dc361ace46200ac133a9eec50f9a1ddcb08352fe6d9a485da367f21f6a535da8
 
 build:
   number: 0
