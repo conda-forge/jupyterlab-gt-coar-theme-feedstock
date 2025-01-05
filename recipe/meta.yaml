@@ -6,21 +6,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 0d74f0f9cafc8c282d400d51550cb82c2d7b8628ac3ea98f91aed1137315b47e
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
-    - python >=3.6
+    - python {{ python_min }}
   run:
     - jupyterlab >=3,<4
-    - python >=3.6
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -30,6 +30,7 @@ test:
     - jupyter labextension list
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/gt-coar/jupyterlab-gt-coar-theme
